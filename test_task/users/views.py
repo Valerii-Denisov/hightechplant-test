@@ -3,14 +3,14 @@ from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.translation import gettext as _
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView
+from django.views import View
 from django.core.mail import EmailMessage
 
 from test_task.users.forms import Register
@@ -35,7 +35,7 @@ class UserRegister(SuccessMessageMixin, CreateView):
     template_name = 'CRUD/create_update.html'
     model = CustomUser
     form_class = Register
-    success_url = reverse_lazy('user_login')
+    success_url = reverse_lazy('Home')
     success_message = _('The user has been successfully registered')
     extra_context = {'header': _('Registration'), 'button_name': _('Register')}
 
@@ -56,8 +56,11 @@ class UserRegister(SuccessMessageMixin, CreateView):
             mail_subject, message, to=[to_email]
         )
         email.send()
+        messages.success(
+            self.request,
+            _('Activation link has been sent to your email id.'),
+        )
         return redirect(self.success_url)
-
 
 
 class UserEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -101,17 +104,26 @@ class UserEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         context['user_id'] = str(user_id)
         return context
 
-def activate(request, uidb64, token):
-    User = get_user_model()
-    try:
-        uid = force_str(urlsafe_base64_decode(uidb64))
-        user = User.objects.get(pk=uid)
-    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user = None
-    if user is not None and account_activation_token.check_token(user, token):
-        user.is_active = True
-        user.save()
-        return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
-    else:
-        return HttpResponse('Activation link is invalid!')
 
+class UserActivate(View, SuccessMessageMixin):
+    success_url = reverse_lazy('user_login')
+
+    def get(self, request, *args, **kwargs):
+        user_model = get_user_model()
+        try:
+            uid = force_str(urlsafe_base64_decode(kwargs['uidb64']))
+            user = user_model.objects.get(pk=uid)
+        except(TypeError, ValueError, OverflowError, user_model.DoesNotExist):
+            user = None
+        if user is not None and account_activation_token.check_token(
+                user,
+                kwargs['token'],
+        ):
+            user.is_active = True
+            user.save()
+            messages.success(
+                self.request,
+                _('Thank you for your email confirmation. Now you can login your account.'))
+        else:
+            messages.error(self.request, _('Activation link is invalid!'))
+        return redirect(self.success_url)
