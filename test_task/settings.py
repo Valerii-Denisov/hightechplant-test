@@ -134,10 +134,12 @@ LOGOUT_REDIRECT_URL = 'Home'
 
 EMAIL_USE_TLS = True
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.yandex.ru'
 
-EMAIL_HOST_USER = 'klerk919191@gmail.com'
+EMAIL_HOST_USER = 'aseliar@yandex.ru'
 
-EMAIL_HOST_PASSWORD = '10011992ved'
+EMAIL_HOST_PASSWORD = 'odrcabmnrvhopxyk'
 
 EMAIL_PORT = 587
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
