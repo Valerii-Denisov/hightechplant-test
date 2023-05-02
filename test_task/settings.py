@@ -131,3 +131,13 @@ AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'Home'
 
 LOGOUT_REDIRECT_URL = 'Home'
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'klerk919191@gmail.com'
+
+EMAIL_HOST_PASSWORD = '10011992ved'
+
+EMAIL_PORT = 587
