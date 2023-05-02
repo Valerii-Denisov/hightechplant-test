@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from test_task import views
+from django.contrib.auth import views as a_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,17 @@ urlpatterns = [
     path('login/', views.UserLogin.as_view(), name='user_login'),
     path('logout/', views.UserLogout.as_view(), name='user_logout'),
     path('users/', include('test_task.users.urls')),
+    path(
+        'password-reset/',
+        a_views.PasswordResetView.as_view(template_name='reset_password.html'),
+        name='password_reset'),
+    path('password-reset/done/', a_views.PasswordResetDoneView.as_view(),
+         name='password_reset_done'
+         ),
+    path('reset/<uidb64>/<token>/', a_views.PasswordResetConfirmView.as_view(),
+         name='password_reset_confirm'
+         ),
+    path('reset/done/', a_views.PasswordResetCompleteView.as_view(),
+         name='password_reset_complete'
+         ),
 ]

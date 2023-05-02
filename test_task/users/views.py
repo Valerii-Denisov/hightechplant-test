@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import redirect
@@ -9,7 +10,7 @@ from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.translation import gettext as _
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from django.views import View
 from django.core.mail import EmailMessage
 
@@ -127,3 +128,19 @@ class UserActivate(View, SuccessMessageMixin):
         else:
             messages.error(self.request, _('Activation link is invalid!'))
         return redirect(self.success_url)
+
+
+
+class OneUserView(DetailView):
+    """
+    This class is responsible for displaying the user details page.
+    """
+    template_name = 'users/user_detail.html'
+    model = CustomUser
+    pk_url_kwarg = 'id'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user_id = self.request.user.id
+        context['user_id'] = str(user_id)
+        return context

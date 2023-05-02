@@ -18,12 +18,11 @@
   <tbody>
     {% for user in user_list %}
       <tr>
-        <td>{{ user.id }}</td>
+        <td><a href="{% url 'user_see' id=user.id%}">{{user.id}}</a></td>
         <td>{{ user.email  }}</td>
         <td>{{ user.first_name }} {{ user.last_name }}</td>
         <td>{{ user.date_joined|date:'d.m.Y' }}</td>
         <td>
-          <a href="{% url 'user_edit' id=user.id%}">{% translate "Edit" %}</a>
         </td>
       </tr>
     {% endfor %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="my-4">{% translate "Viewing a user information" %}</h1>
+
+<div class="card">
+  <div class="card-header text-white" style="background-color: #0e4379 ">
+    <h2>{{user.first_name}} {{user.last_name}}</h2>
+  </div>
+  <div class="card-body bg-light">
+    <p>{% translate "User description" %}</p>
+    <hr>
+    <div class="container">
+      <div class="row p-1">
+        <div class="col">ID</div>
+        <div class="col">{{user.id}}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">{% translate "First name" %}</div>
+        <div class="col">{{user.first_name}}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">{% translate "Last name" %}</div>
+        <div class="col">{{user.last_name}}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">EMAIL</div>
+        <div class="col">{{user.email}}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">{% translate "Created at" %}</div>
+        <div class="col">{{user.date_joined}}</div>
+      </div>
+      <div class="row p-1">
+        <div class="col">
+          <a href="{% url 'user_edit' id=user.id%}">{% translate "Edit" %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
