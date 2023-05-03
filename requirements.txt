@@ -1,0 +1,13 @@
+asgiref==3.6.0; python_version >= "3.8"
+beautifulsoup4==4.12.2; python_full_version >= "3.6.0" and python_version >= "3.7"
+dj-database-url==2.0.0
+django-bootstrap4==23.1; python_version >= "3.7"
+django==4.2; python_version >= "3.8"
+gunicorn==20.1.0; python_version >= "3.5"
+psycopg2-binary==2.9.6; python_version >= "3.7"
+python-dotenv==1.0.0; python_version >= "3.8"
+soupsieve==2.4.1; python_full_version >= "3.6.0" and python_version >= "3.7"
+sqlparse==0.4.4; python_version >= "3.8"
+typing-extensions==4.5.0; python_version >= "3.7"
+tzdata==2023.3; sys_platform == "win32" and python_version >= "3.8"
+whitenoise==6.4.0; python_version >= "3.7"
