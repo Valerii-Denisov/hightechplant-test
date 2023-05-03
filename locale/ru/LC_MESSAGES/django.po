@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-03 10:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: test_task/templates/base.html:16 test_task/templates/base.html:20
+msgid "Test task"
+msgstr "Тестовое задание"
+
+#: test_task/templates/base.html:33 test_task/templates/users/users.html:5
+msgid "Users"
+msgstr "Пользователи"
+
+#: test_task/templates/base.html:43
+msgid "Log out"
+msgstr "Разлогиниться"
+
+#: test_task/templates/base.html:50
+#: test_task/templates/password_reset_complete.html:14
+#: test_task/templates/user_login.html:7
+msgid "Log in"
+msgstr "Залогиниться"
+
+#: test_task/templates/base.html:56 test_task/users/views.py:41
+msgid "Registration"
+msgstr "Регистрация"
+
+#: test_task/templates/base.html:79
+msgid "Test task for Hightech Plant. Author: Valerii Denisov"
+msgstr "Тестовое задание для Хайтек плант. Автор: Валерий Денисов"
+
+#: test_task/templates/index.html:9
+msgid "Hello!"
+msgstr "Привет!"
+
+#: test_task/templates/index.html:10
+msgid "This is a Test Task for company Hightech Plant."
+msgstr "Это тестовое задание для компании Хайтек плант."
+
+#: test_task/templates/password_reset_complete.html:7
+msgid "Password reset complete"
+msgstr "Сброс пароля завершен"
+
+#: test_task/templates/password_reset_complete.html:11
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Новый пароль установлен. Теперь вы можете залогиниться."
+
+#: test_task/templates/reset_password.html:7
+#: test_task/templates/reset_password_done.html:7
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: test_task/templates/reset_password.html:23
+msgid "Reset"
+msgstr "Сбросить"
+
+#: test_task/templates/reset_password_confirm.html:7
+msgid "Change password"
+msgstr "Поменять пароль"
+
+#: test_task/templates/reset_password_confirm.html:23
+msgid "Change"
+msgstr "Поменять"
+
+#: test_task/templates/reset_password_done.html:11
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"Мы отправили Вам по электронной почте инструкции по установке Вашего пароля, "
+"если учетная запись существует вместе с введенным Вами электронным адресом. "
+"Вы должны получить их в ближайшее время."
+
+#: test_task/templates/reset_password_done.html:14
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Если вы не получили электронное письмо, пожалуйста, убедитесь, что вы ввели "
+"адрес с которым вы зарегистрировались на сайте и проверьте свою папку со "
+"спамом."
+
+#: test_task/templates/user_login.html:26
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: test_task/templates/user_login.html:31
+msgid "Entering"
+msgstr "Вход"
+
+#: test_task/templates/users/user_detail.html:5
+msgid "Viewing a user information"
+msgstr "Информация о пользователе"
+
+#: test_task/templates/users/user_detail.html:12
+msgid "User description"
+msgstr "Описание пользователя"
+
+#: test_task/templates/users/user_detail.html:20
+msgid "First name"
+msgstr "Имя"
+
+#: test_task/templates/users/user_detail.html:24
+msgid "Last name"
+msgstr "Фамилия"
+
+#: test_task/templates/users/user_detail.html:32
+#: test_task/templates/users/users.html:13
+msgid "Created at"
+msgstr "Зарегестрирован"
+
+#: test_task/templates/users/user_detail.html:37
+msgid "Edit"
+msgstr "Изменить"
+
+#: test_task/templates/users/users.html:12
+msgid "Full name"
+msgstr "Полное имя"
+
+#: test_task/users/managers.py:15
+msgid "The Email must be set"
+msgstr "Email должен быть введен"
+
+#: test_task/users/managers.py:31
+msgid "Superuser must have is_staff=True."
+msgstr "Суперюзер должен быть is_staff=True."
+
+#: test_task/users/managers.py:33
+msgid "Superuser must have is_superuser=True."
+msgstr "Суперюзер должен быть is_superuser=True."
+
+#: test_task/users/models.py:10
+msgid "email address"
+msgstr "Email адрес"
+
+#: test_task/users/views.py:40
+msgid "The user has been successfully registered"
+msgstr "Пользователь успешно зарегестрирован"
+
+#: test_task/users/views.py:41
+msgid "Register"
+msgstr "Регистрация"
+
+#: test_task/users/views.py:62
+msgid "Activation link has been sent to your email id."
+msgstr "Ссылка для активации отправлена на Ваш email адрес"
+
+#: test_task/users/views.py:77
+msgid "Edit user"
+msgstr "Редактировать пользователя"
+
+#: test_task/users/views.py:77
+msgid "To change"
+msgstr "Изменить"
+
+#: test_task/users/views.py:85
+msgid "You dont have the rights to change another user"
+msgstr "У Вас нет прав изменять другого пользователя"
+
+#: test_task/users/views.py:88
+msgid "You are not logged in! Please log in"
+msgstr "Вы не вошли в систему! Прожалуйста залогинитесь"
+
+#: test_task/users/views.py:99
+msgid "User successfully changed"
+msgstr "Пользователь успешно изменен"
+
+#: test_task/users/views.py:127
+msgid "Thank you for your email confirmation. Now you can login your account."
+msgstr ""
+"Благодарим Вас за подтверждение электронной почты. Теперь Вы можете войти в "
+"свою учетную запись."
+
+#: test_task/users/views.py:129
+msgid "Activation link is invalid!"
+msgstr "Ссылка активации не корректна!"
+
+#: test_task/views.py:20
+msgid "You are logged in"
+msgstr "Вы залогинились"
+
+#: test_task/views.py:31
+msgid "You are logged out"
+msgstr "Вы разлогинились"
